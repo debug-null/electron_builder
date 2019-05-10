@@ -1,0 +1,81 @@
+{
+  "name": "your-app",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "productName": "seek_pack",
+    "appId": "net.sunniwell.rm.client",
+    "copyright": "0.1",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "node_modules/",
+      "package.json"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./build/icons/icon.ico",
+      "uninstallerIcon": "./build/icons/icon.ico",
+      "installerHeaderIcon": "./build/icons/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "electron",
+      "artifactName": "${productName}-${version}-${os}-${arch}-setup.${ext}",
+      "include": "build/script/installer.nsh"
+    },
+    "win": {
+      "icon": "./build/icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "dmg": {
+      "backgroundColor": "#FFFFFF",
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "title": "TiEthWallet ${version}"
+    },
+    "mac": {
+      "icon": "build/icons/icon.icns"
+    },
+    "linux": {
+      "icon": "build/icons"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron-builder": "^20.40.2"
+  }
+}
