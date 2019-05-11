@@ -23,5 +23,6 @@
 *   build-note.md 打包时的配置说明文件，只是用来参考而已
 
 ### 若是遇到错误，请参考下面的博客，我都写到这里了
+[博客地址](http://www.weilai.info/rear_end/339.html)
 
 
