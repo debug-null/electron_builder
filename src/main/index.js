@@ -1,5 +1,5 @@
 
-const {electron,ipcMain,BrowserWindow, dialog} = require('electron'); 
+const {electron,ipcMain,BrowserWindow} = require('electron'); 
 const { autoUpdater } = require('electron-updater');
 
 const feedUrl = `http://127.0.0.1:/electron`; //版本存放的服务器
@@ -11,18 +11,17 @@ const Menu  = require('electron').Menu;
 var mainWindow = null;
 var webContents;
 
-let createWindow = ()=>{
+let createWindow = (filePath)=>{
     // 创建浏览器窗口。
     mainWindow = new BrowserWindow({width: 800, height: 600});
  
     webContents = mainWindow.webContents;
  
     // 加载应用的 index.html
-    mainWindow.loadURL('file://' + process.cwd() + '/src/render/index.html');
-  
+    mainWindow.loadURL(filePath);
+    
     // 打开开发工具
     mainWindow.openDevTools();
-    console.log(dialog.showOpenDialog({ properties: ['openFile', 'openDirectory', 'multiSelections'] }))
     //菜单配置
     const template = [
      {
@@ -108,7 +107,7 @@ let createWindow = ()=>{
     });
     // 事件：update-not-available未发现更新版本
     autoUpdater.on('update-not-available', function (res) {
-        sendUpdateMessage('updateNotAva' ,'update-not-available' + res)
+        sendUpdateMessage('updateNotAva' ,message.updateNotAva + res)
     });
     
     // 更新下载进度事件

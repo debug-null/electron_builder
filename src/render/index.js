@@ -9,9 +9,7 @@ btn.onclick = function(){
 let ul = document.querySelector('ul');
 let mesStr = '';
 
-ipcRenderer.on('upload', (event, {message, data})=>{
-    alert(data)
-})
+
 ipcRenderer.on('message', (event, {message, data})=>{
 
     console.log( message, data)
