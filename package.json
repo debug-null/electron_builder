@@ -1,14 +1,21 @@
 {
   "name": "your-app",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "main": "main.js",
   "scripts": {
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "start": "electron ."
   },
   "build": {
     "productName": "seek_pack",
     "appId": "net.sunniwell.rm.client",
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1/electron"
+      }
+    ],
     "copyright": "0.1",
     "directories": {
       "output": "dist"
@@ -17,7 +24,8 @@
       "main.js",
       "index.html",
       "node_modules/",
-      "package.json"
+      "package.json",
+      "src/"
     ],
     "nsis": {
       "oneClick": false,
@@ -74,8 +82,11 @@
       "icon": "build/icons"
     }
   },
-  "dependencies": {},
   "devDependencies": {
-    "electron-builder": "^20.40.2"
+    "electron": "^2.0.1",
+    "electron-builder": "^20.15.0"
+  },
+  "dependencies": {
+    "electron-updater": "^4.0.0"
   }
 }

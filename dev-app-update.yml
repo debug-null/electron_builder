@@ -1,0 +1,8 @@
+version: 0.1.0
+files:
+  - url: seek_pack-0.1.0-win-setup.exe
+    sha512: SmuHi5snQROt2bmvculXdgROH6tduv6xnZnDh4f08nb0zm1H4svYDfLerG9zaH24PCGh7nMj3oGMST09lmoI4Q==
+    size: 67745828
+path: seek_pack-0.1.0-win-setup.exe
+sha512: SmuHi5snQROt2bmvculXdgROH6tduv6xnZnDh4f08nb0zm1H4svYDfLerG9zaH24PCGh7nMj3oGMST09lmoI4Q==
+releaseDate: '2019-05-11T11:08:15.326Z'
