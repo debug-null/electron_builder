@@ -28,3 +28,10 @@ ipcRenderer.on('message', (event, {message, data})=>{
 function update(){
     ipcRenderer.send('update');
 }
+
+
+const versionInfoBtn = document.getElementById('version')
+
+const electronVersion = process.versions.electron
+const message = `当前应用正在使用的 Electron 版本: ${electronVersion}`
+versionInfoBtn.innerHTML = message
