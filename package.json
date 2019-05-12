@@ -9,7 +9,7 @@
   },
   "build": {
     "productName": "seek_pack",
-    "appId": "net.sunniwell.rm.client",
+    "appId": "weilai.info",
     "publish": [
       {
         "provider": "generic",
